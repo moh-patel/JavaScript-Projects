@@ -1,0 +1,115 @@
+DOM: Document Object Model
+
+Document: html document
+Object: every element in html document
+Model: layout
+
+
+Nodes: tags and things within tags (everything that you can change in the document) and html attributes
+
+we can find a node and do whatever you want to do with a node.
+
+3 Methods:
+var myContentDivs = document.getElementsByClassName('.content');
+var myH2 = myContentDivs[1].getElementsByTagName('h2');
+myH2[0].innerHTML = 'hello';
+
+document.getElementById('page-title').innerHTML = 'hello';
+
+
+
+var myBody = document.getElementsByTagName('body');
+mybody[0].innerHTML = '<p>I am a paragraph tag </p>';
+
+difference between properties and methods:
+example;
+<a href='/Subjects' id='test'>
+
+link = document.getElementById('test');
+link.href; //'www.mywebsite.co.uk/Subjects'
+link.getAttribute('href'); / '/Subjects'
+
+
+
+adding elements to the DOM
+
+1) create element 
+2) push it into the html document
+
+var liElement = document.createElement('li');
+
+var aElement = document.createElement('a');
+
+//get menu ul
+var menu = document.getElementById('main-nav').getElementsByTagName('ul')[0];
+
+menu.appendChild(liElement);
+newLi.appendChild(aElement);
+
+aElement.innerHTML = 'Blog';
+
+
+//alternate method to appendChild is insertBefore an element
+menu.insertBefore(liElement, menu.getElementsByTagName('li')[0]);
+
+
+
+
+//Removing Elements from the DOM
+//grab the element you want to remove and store in variable and then remove it
+var element = document.getElementById('element');
+element.remove();
+
+
+//if you removing a child element you can adopt this method
+var parent = document.getElementById('main-nav').getElementsByTagName('ul')[0];
+var child = parent.getElementsByTagName('li')[0];
+var removed = parent.removeChild(child); //by storing variable you can re insert it
+
+
+
+//get parent node of an element 
+var childNode = document.querySelector('#lol');
+var parentNode = childNode.parentNode;
+// also Nodes and elements for the most part can be interchangeable
+var childElement = document.querySelector('#lol');
+var parentElement = childElement.parentElement;
+
+//the difference between parentNode and parentElement
+document.body.parentNode; // the <html> element
+document.body.parentElement; // the <html> element
+
+document.documentElement.parentNode; // the document node
+document.documentElement.parentElement; // null
+
+(document.documentElement.parentNode === document);  // true
+(document.documentElement.parentElement === document);  // false
+//Since the <html> element (document.documentElement) doesn't have a parent that is an element, 
+//parentElement is null. 
+//(There are other, more unlikely, cases where parentElement could be null,
+// but you'll probably never come across them.)
+
+
+//child Nodes determines line breaks in html doc as text nodes and it causes confusion therefore use children
+//example of use of children
+document.querySelector('#lol').children[1];
+
+
+//property called firstChild is useless because its like the childNode so use firstElementChild
+document.querySelector('#lol').firstElementChild;
+document.querySelector('#lol').lastElementChild;
+
+
+//siblings use nextElementSibling not nextSibling;
+document.querySelector('#lol').nextElementSibling;
+document.querySelector('#lol').previousElementSibling;
+
+
+
+//createElement
+var newTextElement = document.createElement('p');
+var newText = document.createTextNode('lol how are you');
+newTextElement.appendChild(newText);
+//add the element
+document.querySelector('#id').appendChild(newTextElement);
+//note: you can use insertBefore instead of appendChild;
