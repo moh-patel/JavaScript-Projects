@@ -14,7 +14,7 @@
             newEle.style.fontSize = '1rem';
             newEle.style.margin = '20px'
             newEle.style.padding = '10px';
-            
+            container.style.height = '40%';
 
             setTimeout(function(){
                container.querySelector('p').remove();
