@@ -12,8 +12,7 @@
                     index = 4;
                 }
             }
-            container.style.backgroundImage = 'url("images/' + images[index] + '.jpeg")';
-            
+            container.style.backgroundImage = `url('images/${images[index]}.jpeg')`;
         });
     });
     
