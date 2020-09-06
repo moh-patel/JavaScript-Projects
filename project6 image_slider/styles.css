@@ -1,0 +1,68 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+body{
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+#container{
+    font-size: 2rem;
+    /* line-height: 1.2;
+    font-weight: 500;
+    width: 30vw;
+    height: 50%;
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0; */
+    margin: auto;
+    text-align: center;
+    border: 6px solid #3e92cc;
+    border-radius: 5px;
+    background: url('images/car-0.jpeg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 70vh;
+    width: 80%;
+    max-width: 932px;
+    margin: 10% auto;
+
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+button{
+    align-self: center;
+    width: 40px;
+    height: 50px;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    background-color: #3e92cc ;
+    color: white;
+    outline: none;
+}
+
+button:hover{
+    color: #3e92cc;
+    background-color: white;
+    border: solid;
+    border-color: #3e92cc;
+    cursor: pointer;
+}
+#previous{
+    position: relative;
+    right: 20px;
+}
+#next{
+    position: relative;
+    left: 20px;
+}
+
