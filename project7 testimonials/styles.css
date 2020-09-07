@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    
+    min-height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url('images/background.jpeg')center/cover no-repeat fixed;
+    color: whitesmoke;
+}
+.container{
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+#testimonial-container{
+    border: 1px solid whitesmoke;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#client, i{
+    color: #f15025;
+    font-size: 2rem !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+img{
+    width: 150px;
+    border-radius: 50%;
+    position: relative;
+    top: -3rem;
+    align-self: center;
+}
+
+button{
+    position: absolute;
+    outline: none;
+    width:  35px;
+    border-style: none;
+    border-radius: 50%;
+    background: none;
+    border: #f15025 solid 2px;
+}
+#previous{
+    top: 50%;
+    left: 0%;
+    transform: translate(-120%,-50%);
+}
+#next{
+    right: 0;
+    top: 50%;
+    transform: translate(120%,-50%);
+}
+
+button:hover, button:hover i{
+    cursor: pointer;
+    background-color: #f15025;
+    color: white !important;
+}
+button >i{
+    z-index: -1;
+}

@@ -1,0 +1,10 @@
+event bubbles up from  target element to furthermost target element
+executes events of all its parents elements
+
+let list = document.querySelector('ul');
+list.addEventListener('click' function(e){
+    if(e.target.tagName == 'button'){
+        list li = e.target.parentElement;
+        li.parentNode.removeChild(li);
+    }
+})
