@@ -1,0 +1,283 @@
+:root {
+    --mainPink: #ef7998;
+    --mainYellow: rgb(249, 228, 148);
+    --mainWhite: #fff;
+    --mainBlack: #000;
+    --yellowTrans: rgba(249, 228, 148, 0.5);
+    --mainGrey: rgb(238, 238, 238);
+}
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Kaushan Script', cursive;
+}
+::after, ::before{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+nav{
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    margin-right: 5%;
+    align-items: center;
+}
+li{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #ef7998;
+    margin: 5px;
+}
+
+button{
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border-color: black;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--mainPink);
+    border-color: var(--mainPink);
+    
+    color: white;
+
+}
+
+#tel{
+    margin-left: 24%;
+}
+
+
+/*after nav bar is large image*/
+#welcome-image-container{
+    width: 100%;
+    min-height: calc(100vh - 76px);
+    background: linear-gradient(var(--yellowTrans), var(--yellowTrans)), url(images/headerBcg.jpeg) center/cover fixed no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#welcome-message h1{
+    margin-bottom: 10px;
+}
+#welcome-message strong{
+    color: white;
+    color: var(--mainPink);
+}
+
+/*sets all button explore buttons*/
+button.btn-explore{
+    color: var(--mainBlack);
+    border: 0.2rem solid var(--mainBlack);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+}
+button.btn-explore:hover{
+    background: var(--mainBlack);
+    color: var(--mainPink);
+    cursor: pointer;
+
+}
+
+
+.about{
+    margin: 0 10%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+#about-info, #about-image{
+    margin: 10% 15%;
+}
+#about-info p{
+    margin-right: 40%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    color: #6c757d;
+}
+
+.about h1 {
+    font-size: 2.5em;
+}
+.about strong{
+    color: var(--mainPink);;
+}
+
+.about button{
+    font-size: 1em;
+    border-width: 0.1em;
+}
+#about-image{
+    position: relative;
+}
+#about-image .image-container::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    outline: 0.5rem solid var(--mainYellow);
+    top: -1.5rem;
+    left: -1.7rem;
+    z-index: -1;
+    transition: all 1s ease-in-out;
+}
+#about-image .image-container:hover:before{
+    top: 0px;
+    left: 0px;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+
+
+
+/* store items */
+#store{
+    background-color: var(--mainGrey);
+    text-align: center;
+}
+#store h1{
+     padding-top: 5%;
+     padding-bottom: 2%;
+     font-size: 2.5rem;
+}
+
+#store h1>strong{
+    font-size: 3rem;
+    color: var(--mainPink);;
+}
+
+.store-btns{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 3% 15%;
+}
+.store-btns button{
+    margin: 1.5%;
+    border-width: 0.1rem;
+}
+
+/* search bar */
+form i {
+    background-color: var(--mainPink);
+    margin: 0px;
+}
+form input{
+    margin: 0px;
+}
+/* make a grid for store items */
+.store-items{
+    margin: 3% 10% 0 10%;
+    padding-bottom: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+/* cards that store items */
+.card{
+    background-color: white;
+}
+.card .image-container{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.store-image{
+    width: 100%;
+    transition: all 1s ease-in-out;
+}
+.image-container:hover .store-image{
+    transform: scale(1.2);
+}
+.store-item-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.75rem;
+    background: var(--mainYellow);
+    border-top-left-radius: 1rem;
+    transition: all 1s ease-in-out;
+    transform: translate(100%, 100%); /*goes to after corner of containing element 
+    as the containing element is set to overflow hidden you will not be able to see this element */
+  }
+
+.image-container:hover .store-item-icon{
+    transform: translate(0,0); /*oes to its orignal position*/
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    padding: 7%;
+    font-size: 1.2rem;
+}
+
+
+
+
+@media only screen and (min-width: 769px){
+    .about{
+        grid-template-columns: 1fr 1fr;
+        margin: 0 3%;
+    }
+    #about-image{
+        align-self: center;
+    }
+    #about-info p{
+        margin-right: 10%;
+    }
+}
+
+
