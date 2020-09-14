@@ -62,6 +62,13 @@ li{
     color: #ef7998;
     margin: 5px;
 }
+li a{
+    color: #ef7998;
+    text-decoration: none;
+}
+li a:hover{
+    color: black;
+}
 
 button{
     background-color: transparent;
@@ -112,14 +119,14 @@ button:hover{
 }
 
 /*sets all button explore buttons*/
-button.btn-explore{
+button.btn-explore, .store-btns button{
     color: var(--mainBlack);
     border: 0.2rem solid var(--mainBlack);
     font-size: 1.5rem;
     text-transform: uppercase;
 
 }
-button.btn-explore:hover{
+button.btn-explore:hover, .store-btns button:hover{
     background: var(--mainBlack);
     color: var(--mainPink);
     cursor: pointer;
@@ -186,9 +193,15 @@ img{
 #store{
     background-color: var(--mainGrey);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: visible;
 }
+
 #store h1{
-     padding-top: 5%;
+     padding-top: 2%;
      padding-bottom: 2%;
      font-size: 2.5rem;
 }
@@ -199,31 +212,55 @@ img{
 }
 
 .store-btns{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 3% 15%;
+    align-self: stretch;
+    
 }
 .store-btns button{
     margin: 1.5%;
     border-width: 0.1rem;
+    font-size: 1rem;
 }
 
 /* search bar */
-form i {
+form {
+    margin: auto;
+    font-size: 1.2rem;
+    text-align: center;
+    
+    
+}
+form input[type=text] {
+    padding: 10px;
+    border: 1px solid grey;
+    float: left;
+    background: #f1f1f1;
+  }
+  
+  form i {
+    float: left;
+    width: 5%;
+    min-width: 34px;
+    padding: 10px;
     background-color: var(--mainPink);
-    margin: 0px;
-}
-form input{
-    margin: 0px;
-}
+    text-align: center;
+    border: 1px solid grey;
+    border-right: none;
+    border-radius: 5px 0px 0px 5px;
+  }
+  form::after{
+      content: '';
+      clear: both;
+      display: table;
+  }
 /* make a grid for store items */
 .store-items{
-    margin: 3% 10% 0 10%;
-    padding-bottom: 5vh;
+    margin: 1.5% 10% 5% 10%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    max-width: 1100px;
+}
+.item{
+    margin: 3%;
 }
 /* cards that store items */
 .card{
@@ -265,7 +302,11 @@ form input{
 }
 
 
-
+@media only screen and (min-width: 500px){
+    .store-items{
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
 @media only screen and (min-width: 769px){
     .about{
@@ -277,6 +318,9 @@ form input{
     }
     #about-info p{
         margin-right: 10%;
+    }
+    .store-items{
+        grid-template-columns: auto auto auto;
     }
 }
 
